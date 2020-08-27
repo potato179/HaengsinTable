@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>행신중학교 일정</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/06fb83cb17.js" crossorigin="anonymous"></script>
+    <link href = "https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">     
+    <link rel="stylesheet" href="./public/border.css">
+    <link rel="stylesheet" href="./public/box.css">
+    <link rel="stylesheet" href="./public/button.css">
+    <link rel="stylesheet" href="./public/footer.css">
+    <link rel="stylesheet" href="./public/font.css">
+    <link rel="stylesheet" href="./public/outline.css">
+    <style>
+        body{
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        hr{
+            background: black;
+        }
+    </style>
+</head>
+<body onload = "onload();">
+    <div style = "position: fixed; top: 0; left: 0; right: 0; z-index: -1;"> 
+        <br><br><br><br><br><br>
+        <div class = "container">
+            <h1 class = "white blurshadow-grey">행신중학교 일정표</h1>
+            <h6 class = "white blurshadow-grey">Made by 홍은표 with ♥ for 행신중학교 전교생+선생님</h6>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <main class = "container box-white">
+        <br>
+        <h2>우리반 시간표</h2><hr>
+        <div>        
+            <select id = "choosegrade">
+                <option value = "a">1학년</option>
+                <option value = "b">2학년</option>
+                <option value = "c">3학년</option>
+            </select>
+            <select id = "chooseclass">
+                <option value = "a">1반</option>
+                <option value = "b">2반</option>
+                <option value = "c">3반</option>
+                <option value = "d">4반</option>
+                <option value = "e">5반</option>
+                <option value = "f">6반</option>
+            </select>
+            <button class = "button-proceed" onclick = "searchtimetable();">검색</button>
+            <br><br>
+            <table class = "center" border = "1">
+                <th> </th>
+                <th>월요일</th>
+                <th>화요일</th>
+                <th>수요일</th>
+                <th>목요일</th>
+                <th>금요일</th>
+                <tr>
+                    <td>1교시</td>
+                    <td id = "t11">월1</td>
+                    <td id = "t21">화1</td>
+                    <td id = "t31">수1</td>
+                    <td id = "t41">목1</td>
+                    <td id = "t51">금1</td>
+                </tr>
+                <tr>
+                    <td>2교시</td>
+                    <td id = "t12">월1</td>
+                    <td id = "t22">화1</td>
+                    <td id = "t32">수1</td>
+                    <td id = "t42">목1</td>
+                    <td id = "t52">금1</td>
+                </tr>
+                <tr>
+                    <td>3교시</td>
+                    <td id = "t13">월1</td>
+                    <td id = "t23">화1</td>
+                    <td id = "t33">수1</td>
+                    <td id = "t43">목1</td>
+                    <td id = "t53">금1</td>
+                </tr>
+                <tr>
+                    <td>4교시</td>
+                    <td id = "t14">월1</td>
+                    <td id = "t24">화1</td>
+                    <td id = "t34">수1</td>
+                    <td id = "t44">목1</td>
+                    <td id = "t54">금1</td>
+                </tr>
+                <tr>
+                    <td>5교시</td>
+                    <td id = "t15">월1</td>
+                    <td id = "t25">화1</td>
+                    <td id = "t35">수1</td>
+                    <td id = "t45">목1</td>
+                    <td id = "t55">금1</td>
+                </tr>
+                <tr>
+                    <td>6교시</td>
+                    <td id = "t16">월1</td>
+                    <td id = "t26">화1</td>
+                    <td id = "t36">수1</td>
+                    <td id = "t46">목1</td>
+                    <td id = "t56">금1</td>
+                </tr>
+                <tr>
+                    <td>7교시</td>
+                    <td id = "t17">월1</td>
+                    <td id = "t27">화1</td>
+                    <td id = "t37">수1</td>
+                    <td id = "t47">목1</td>
+                    <td id = "t57">금1</td>
+                </tr>
+            </table>
+        </div>
+        <br><br><br>
+        <h2>오늘의 급식</h2><hr>
+        <div id = "today_meal">
+            <h4>급식 정보 로딩중..</h4>
+        </div>
+        <br><br><br>
+        <h2>오늘의 학사 일정</h2><hr>
+        <div id = "today_meal">
+            <h4>학사일정 정보 로딩중..</h4>
+        </div>
+        <br><br><br>
+        <button onclick = "window.open('https://m.me/makerpotato179')" class = "button-proceed white" style = "background-color: #7289db; padding: 10px; font-size: 20px; margin: 3px; width: 100%;"><span>문의하기</span></button>
+    </main>
+    <br><br><br>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type = "text/javascript" src = "./timetable.js"></script>
+    <script>
+        var gradi = Math.floor(Math.random()*16777215).toString(16);
+        var gradj = Math.floor(Math.random()*16777215).toString(16);
+        function onload(){
+            document.querySelector("body").style.cssText = `background: linear-gradient(to right, #${gradi}, #${gradj});`
+            document.querySelector("main").style.cssText = `opacity: 1;`;
+        }
+
+        function searchtimetable(){
+            var s = document.getElementById("choosegrade");
+            var choosegrade = s.options[s.selectedIndex].value;
+            var s = document.getElementById("chooseclass");
+            var chooseclass = s.options[s.selectedIndex].value;
+            var classroomname = choosegrade + chooseclass;
+            
+            let gettable = "";
+            if(classroomname === "aa") gettable = aa;
+            else if(classroomname === "ab") gettable = ab;
+            else if(classroomname === "ac") gettable = ac;
+            else if(classroomname === "ad") gettable = ad;
+            else if(classroomname === "ae") gettable = ae;
+            else if(classroomname === "af") gettable = af;
+            else if(classroomname === "ba") gettable = ba;
+            else if(classroomname === "bb") gettable = bb;
+            else if(classroomname === "bc") gettable = bc;
+            else if(classroomname === "bd") gettable = bd;
+            else if(classroomname === "be") gettable = be;
+            else if(classroomname === "bf") gettable = bf;
+            else if(classroomname === "ca") gettable = ca;
+            else if(classroomname === "cb") gettable = cb;
+            else if(classroomname === "cc") gettable = cc;
+            else if(classroomname === "cd") gettable = cd;
+            else if(classroomname === "ce") gettable = ce;
+            else if(classroomname === "cf") gettable = cf;
+
+            var cnt = 0;
+            for(var i = 1; i < 8; i++){
+                for(var j = 1; j < 8; j++){
+                    $("#t" + i + j).html(gettable[cnt])
+                    console.log(gettable[cnt]);
+                    cnt++;
+                }
+            }
+            cnt = 0;
+        }
+    </script>
+</body>
+</html>
